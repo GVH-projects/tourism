@@ -7,12 +7,20 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import NavigationBar from "./components/NavigationBar";
 
+import Bisnis from "./pages/Destination/Bisnis";
+import Petualangan from "./pages/Destination/Petualangan";
+import Santai from "./pages/Destination/Santai";
+import FooterBar from "./components/FooterBar";
+
 function App() {
   return (
     <>
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/bisnis" element={<Bisnis />} />
+        <Route path="/petualangan" element={<Petualangan />} />
+        <Route path="/santai" element={<Santai />} />
       </Routes>
       <UserAuthContextProvider>
         <Routes>
@@ -21,6 +29,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </UserAuthContextProvider>
+      <FooterBar />
     </>
   );
 }
